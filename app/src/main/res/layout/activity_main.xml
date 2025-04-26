@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".ui.MainActivity"
     android:background="#27822A">
 
     <TextView
@@ -15,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:background="@drawable/black_border_background_shape"
         android:text="Deal Maker"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchItemsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -41,16 +43,17 @@
         android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/searchEditText"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white"
-        android:layout_marginRight="12dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/white"
         android:ems="10"
         android:hint="Game name"
         android:inputType="text"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FavoriteButton" />
@@ -63,7 +66,7 @@
         android:layout_marginTop="16dp"
         android:text="Search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
 
     <Button
         android:id="@+id/AddFavoritesButton"
@@ -73,7 +76,7 @@
         android:layout_marginEnd="32dp"
         android:text="Add favorite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -86,12 +89,14 @@
         android:layout_marginLeft="8dp">
 
         <TextView
+
             android:id="@+id/nameTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:background="@drawable/black_border_background_shape"
             android:text=" Name"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="24dp"
             tools:layout_editor_absoluteY="109dp" />
 
@@ -102,6 +107,7 @@
             android:layout_weight="6"
             android:background="@drawable/black_border_background_shape"
             android:text=" Best Price"
+            android:textColor="@color/black"
             app:layout_constraintBaseline_toBaselineOf="@+id/nameTextView"
             tools:layout_editor_absoluteX="101dp" />
 
@@ -110,6 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
+            android:textColor="@color/black"
             android:background="@drawable/black_border_background_shape"
             android:text=" Where to buy"
             app:layout_constraintBaseline_toBaselineOf="@+id/bestPriceTextView"
@@ -120,8 +127,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:textColor="@color/black"
             android:background="@drawable/black_border_background_shape"
-            android:text=" Unfavorite"
+            android:text=" Favorite"
             app:layout_constraintBaseline_toBaselineOf="@+id/locationTextView"
             tools:layout_editor_absoluteX="311dp" />
 
