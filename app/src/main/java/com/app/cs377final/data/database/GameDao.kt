@@ -13,7 +13,7 @@ interface GameDao {
     suspend fun insertFavoriteGame( game: Game)
 
     @Query("SELECT * FROM Games")
-    fun getFavoriteGames(): Flow<List<Game>>
+    fun getFavoriteGames(): List<Game>
 
     @Delete
     suspend fun deleteGame(game: Game) // New method for deletion

@@ -20,7 +20,7 @@ class GameRepository(private val gameDao: GameDao) {
     }
 
     // Get the list of favorite games from the database
-    fun getFavoriteGames(): Flow<List<Game>> {
+    fun getFavoriteGames(): List<Game> {
         return gameDao.getFavoriteGames()
     }
 
