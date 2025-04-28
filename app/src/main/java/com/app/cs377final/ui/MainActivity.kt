@@ -1,6 +1,7 @@
 package com.app.cs377final.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -51,6 +52,12 @@ class MainActivity : AppCompatActivity() {
         val searchButton = findViewById<Button>(R.id.SearchButton)
 
         val searchEditText = findViewById<EditText>(R.id.searchEditText)
+
+        val favoriteButton = findViewById<Button>(R.id.FavoriteButton)
+        favoriteButton.setOnClickListener {
+            val intent = Intent(this, FavoritesActivity::class.java)
+            startActivity(intent)
+        }
 
         val searchRecyclerView = findViewById<RecyclerView>(R.id.searchItemsRecyclerView)
 

@@ -10,29 +10,34 @@
     <TextView
         android:textColor="@color/black"
         android:id="@+id/gameNameTextView"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         />
 
     <TextView
         android:id="@+id/gamePriceTextView"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         />
 
     <TextView
         android:id="@+id/gameWhereToBuyTextView"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         />
 
     <Button
         android:id="@+id/favoriteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_width="0dp"
+        android:layout_weight="1.4"
+        android:layout_height="wrap_content"
         android:text="favorite"
+        android:textSize="12sp"
         android:textColor="@color/black"
         android:background="@drawable/black_border_background_shape" />
 
