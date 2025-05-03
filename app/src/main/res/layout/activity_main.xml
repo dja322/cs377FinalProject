@@ -5,11 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    android:background="#27822A">
+    android:background="#27822A"
+    tools:context=".ui.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -17,121 +17,120 @@
         android:text="Deal Maker"
         android:textColor="@color/black"
         android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/FavoriteButton"
+        android:id="@+id/favoriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Favorites"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="View favorites"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/searchItemsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="24dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginLeft="12dp"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
         android:background="@color/white"
-        android:ems="10"
         android:hint="Game name"
         android:inputType="text"
         android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favoriteButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/FavoriteButton" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/SearchButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/searchButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="Search"
+        android:contentDescription="Search game"
+        app:layout_constraintTop_toBottomOf="@id/searchEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+        app:layout_constraintEnd_toStartOf="@id/addFavoritesButton"
+        app:layout_constraintHorizontal_weight="1" />
 
     <Button
-        android:id="@+id/AddFavoritesButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/addFavoritesButton"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
         android:text="Add favorite"
+        android:contentDescription="Add game to favorites"
+        app:layout_constraintTop_toBottomOf="@id/searchEditText"
+        app:layout_constraintStart_toEndOf="@id/searchButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+        app:layout_constraintHorizontal_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/SearchButton"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp">
+        android:background="@drawable/black_border_background_shape"
+        android:text=" Name"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/addFavoritesButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bestPriceTextView"
+        app:layout_constraintHorizontal_chainStyle="spread_inside" />
 
-        <TextView
+    <TextView
+        android:id="@+id/bestPriceTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_border_background_shape"
+        android:text=" Best Price"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        app:layout_constraintStart_toEndOf="@id/nameTextView"
+        app:layout_constraintEnd_toStartOf="@id/locationTextView" />
 
-            android:id="@+id/nameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:background="@drawable/black_border_background_shape"
-            android:text=" Name"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="109dp" />
+    <TextView
+        android:id="@+id/locationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_border_background_shape"
+        android:text=" Where to buy"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        app:layout_constraintStart_toEndOf="@id/bestPriceTextView"
+        app:layout_constraintEnd_toStartOf="@id/favoriteTextView" />
 
-        <TextView
-            android:id="@+id/bestPriceTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:background="@drawable/black_border_background_shape"
-            android:text=" Best Price"
-            android:textColor="@color/black"
-            app:layout_constraintBaseline_toBaselineOf="@+id/nameTextView"
-            tools:layout_editor_absoluteX="101dp" />
+    <TextView
+        android:id="@+id/favoriteTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_border_background_shape"
+        android:text=" Favorite"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        app:layout_constraintStart_toEndOf="@id/locationTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/locationTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:textColor="@color/black"
-            android:background="@drawable/black_border_background_shape"
-            android:text=" Where to buy"
-            app:layout_constraintBaseline_toBaselineOf="@+id/bestPriceTextView"
-            tools:layout_editor_absoluteX="205dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchItemsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="200dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/unfavoriateTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:textColor="@color/black"
-            android:background="@drawable/black_border_background_shape"
-            android:text=" Favorite"
-            app:layout_constraintBaseline_toBaselineOf="@+id/locationTextView"
-            tools:layout_editor_absoluteX="311dp" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
