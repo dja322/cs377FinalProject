@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //runs retrofit client to get game deals and then sets the global varaible "games" to the new list of GameResponse objects
+    //runs retrofit client to get game deals and then sets the global variable "games" to the new list of GameResponse objects
     private fun fetchGameDeals(title: String) {
         // Use Retrofit to make the API call
         val call: Call<List<GameResponse>> = RetrofitClient.apiService.searchGameDeals(title) // Replace "1" with the store ID you want to search for
