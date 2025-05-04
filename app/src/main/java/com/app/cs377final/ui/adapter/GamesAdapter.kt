@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.app.cs377final.R
 import com.app.cs377final.data.database.GameDatabase
@@ -54,6 +55,9 @@ class GamesAdapter
                     )
                     repository.insertFavoriteGame(save_game)
                 }
+
+                Toast.makeText(holder.itemView.context, "Game added to favorites", Toast.LENGTH_SHORT).show()
+                holder.favoriteButton.text = "favorited"
             }
         }
 
