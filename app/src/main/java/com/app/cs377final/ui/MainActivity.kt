@@ -49,11 +49,11 @@ class MainActivity : AppCompatActivity() {
         val repository = GameRepository(gameDatabase.gameDao())
 
         //initialize search button and edit text
-        val searchButton = findViewById<Button>(R.id.SearchButton)
+        val searchButton = findViewById<Button>(R.id.searchButton)
 
         val searchEditText = findViewById<EditText>(R.id.searchEditText)
 
-        val favoriteButton = findViewById<Button>(R.id.FavoriteButton)
+        val favoriteButton = findViewById<Button>(R.id.favoriteButton)
         favoriteButton.setOnClickListener {
             val intent = Intent(this, FavoritesActivity::class.java)
             startActivity(intent)

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.app.cs377final.R
 import com.app.cs377final.data.database.model.Game
@@ -47,6 +48,8 @@ class FavoritesAdapter (
             CoroutineScope(Dispatchers.IO).launch {
                 repository.deleteGame(game)
             }
+            Toast.makeText(holder.itemView.context, "Game removed from favorites", Toast.LENGTH_SHORT).show()
+            holder.favoriteButton.text = "unfavorited"
         }
 
 
